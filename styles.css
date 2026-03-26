@@ -10,6 +10,14 @@
   --secondary: #7cffd9;
   --accent: #91a7ff;
   --shadow: 0 20px 45px rgba(2, 8, 20, 0.45);
+  --primary: #114b5f;
+  --secondary: #1a936f;
+  --accent: #88d498;
+  --text: #1f2933;
+  --muted: #52606d;
+  --bg: #f7fafc;
+  --white: #ffffff;
+  --border: #d9e2ec;
 }
 
 * {
@@ -35,6 +43,16 @@ body {
 
 .container {
   width: min(1120px, 92%);
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.container {
+  width: min(1100px, 92%);
   margin: 0 auto;
 }
 
@@ -45,6 +63,11 @@ body {
   backdrop-filter: blur(10px);
   background: rgba(7, 13, 26, 0.72);
   border-bottom: 1px solid var(--line);
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .nav-wrap {
@@ -52,6 +75,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0.95rem 0;
+  padding: 1rem 0;
 }
 
 .logo {
@@ -59,12 +83,15 @@ body {
   letter-spacing: 0.02em;
   font-size: 1.08rem;
   color: var(--text);
+  font-size: 1.1rem;
+  color: var(--primary);
   text-decoration: none;
 }
 
 .site-nav {
   display: flex;
   gap: 1.1rem;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -78,6 +105,12 @@ body {
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
   color: var(--text);
+  color: var(--text);
+  font-weight: 500;
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--secondary);
 }
 
 .nav-toggle {
@@ -86,6 +119,9 @@ body {
   background: rgba(15, 27, 48, 0.95);
   color: var(--text);
   border-radius: 0.45rem;
+  border: 1px solid var(--border);
+  background: var(--white);
+  border-radius: 0.35rem;
   padding: 0.35rem 0.65rem;
   font-size: 1.2rem;
 }
@@ -114,6 +150,16 @@ body {
 
 .page-hero {
   padding: 3.4rem 0;
+  background: linear-gradient(135deg, #e4f6f2, #f5fbff);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero {
+  padding: 4rem 0;
+}
+
+.page-hero {
+  padding: 3rem 0;
 }
 
 .hero-grid,
@@ -150,6 +196,15 @@ h2 {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 0.84rem;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.eyebrow {
+  font-weight: 700;
+  color: var(--secondary);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
 }
 
 .actions {
@@ -176,6 +231,18 @@ h2 {
   transform: translateY(-2px);
   filter: brightness(1.06);
   box-shadow: 0 14px 30px rgba(122, 215, 255, 0.34);
+  background: var(--secondary);
+  color: var(--white);
+  padding: 0.7rem 1rem;
+  border-radius: 0.45rem;
+  text-decoration: none;
+  border: 2px solid var(--secondary);
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: #157a5c;
+  border-color: #157a5c;
 }
 
 .btn-outline {
@@ -187,6 +254,11 @@ h2 {
 
 .btn-small {
   padding: 0.45rem 0.82rem;
+  color: var(--secondary);
+}
+
+.btn-small {
+  padding: 0.45rem 0.8rem;
   font-size: 0.95rem;
 }
 
@@ -198,6 +270,11 @@ h2 {
   background: linear-gradient(180deg, rgba(14, 24, 41, 0.7), rgba(9, 15, 28, 0.85));
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+  padding: 3rem 0;
+}
+
+.section-alt {
+  background: var(--white);
 }
 
 .hero-card,
@@ -228,6 +305,10 @@ h2 {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+  padding: 1.2rem;
 }
 
 .cards {
@@ -274,6 +355,8 @@ h2 {
 
 .text-link:hover {
   color: var(--secondary);
+  color: var(--secondary);
+  font-weight: 600;
 }
 
 .contact-form {
@@ -299,6 +382,12 @@ textarea:focus {
   border-color: rgba(122, 215, 255, 0.7);
 }
 
+  padding: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+  font: inherit;
+}
+
 .small-note {
   color: var(--muted);
   font-size: 0.9rem;
@@ -307,6 +396,7 @@ textarea:focus {
 .site-footer {
   background: rgba(4, 9, 18, 0.92);
   border-top: 1px solid var(--line);
+  background: #0f1720;
   color: #d7e2ea;
   padding: 1.4rem 0;
 }
@@ -337,6 +427,7 @@ textarea:focus {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+  color: #b4f0db;
 }
 
 @media (max-width: 900px) {
@@ -359,11 +450,15 @@ textarea:focus {
     background: rgba(8, 14, 28, 0.98);
     border: 1px solid var(--line);
     border-radius: 0.65rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
     padding: 0.8rem;
     flex-direction: column;
     align-items: flex-start;
     display: none;
     min-width: 230px;
+    min-width: 220px;
   }
 
   .site-nav.open {
