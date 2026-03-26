@@ -1,0 +1,274 @@
+:root {
+  --primary: #114b5f;
+  --secondary: #1a936f;
+  --accent: #88d498;
+  --text: #1f2933;
+  --muted: #52606d;
+  --bg: #f7fafc;
+  --white: #ffffff;
+  --border: #d9e2ec;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.site-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--secondary);
+}
+
+.nav-toggle {
+  display: none;
+  border: 1px solid var(--border);
+  background: var(--white);
+  border-radius: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  font-size: 1.2rem;
+}
+
+.hero,
+.page-hero {
+  background: linear-gradient(135deg, #e4f6f2, #f5fbff);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero {
+  padding: 4rem 0;
+}
+
+.page-hero {
+  padding: 3rem 0;
+}
+
+.hero-grid,
+.split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.eyebrow {
+  font-weight: 700;
+  color: var(--secondary);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 1.2rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--secondary);
+  color: var(--white);
+  padding: 0.7rem 1rem;
+  border-radius: 0.45rem;
+  text-decoration: none;
+  border: 2px solid var(--secondary);
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: #157a5c;
+  border-color: #157a5c;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--secondary);
+}
+
+.btn-small {
+  padding: 0.45rem 0.8rem;
+  font-size: 0.95rem;
+}
+
+.section {
+  padding: 3rem 0;
+}
+
+.section-alt {
+  background: var(--white);
+}
+
+.hero-card,
+.card,
+.highlight,
+.contact-form,
+.area-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+  padding: 1.2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.area-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.area-item {
+  text-align: center;
+  font-weight: 600;
+}
+
+.center {
+  text-align: center;
+}
+
+.mt {
+  margin-top: 1.5rem;
+}
+
+.text-link {
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+.contact-form {
+  display: grid;
+  gap: 0.5rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+  font: inherit;
+}
+
+.small-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.site-footer {
+  background: #0f1720;
+  color: #d7e2ea;
+  padding: 1.4rem 0;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.site-footer a {
+  color: #b4f0db;
+}
+
+@media (max-width: 900px) {
+  .cards,
+  .area-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-grid,
+  .split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .site-nav {
+    position: absolute;
+    top: 64px;
+    right: 4%;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+    flex-direction: column;
+    align-items: flex-start;
+    display: none;
+    min-width: 220px;
+  }
+
+  .site-nav.open {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .cards,
+  .area-grid {
+    grid-template-columns: 1fr;
+  }
+}

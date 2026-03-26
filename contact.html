@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Clear Vision Cleaning</title>
+    <meta name="description" content="Contact Clear Vision Cleaning for a free commercial cleaning quote." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="logo" href="index.html">Clear Vision Cleaning</a>
+        <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+        <nav class="site-nav">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="areas.html">Service Areas</a>
+          <a href="about.html">About</a>
+          <a class="btn btn-small" href="contact.html" aria-current="page">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <h1>Contact Clear Vision Cleaning</h1>
+          <p>Request a free quote for commercial cleaning services.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container split">
+          <div>
+            <h2>Call Us</h2>
+            <p>
+              Ready to discuss your facility? Call us at
+              <a class="text-link" href="tel:9543933479">954-393-3479</a>.
+            </p>
+            <h3>Service Areas</h3>
+            <p>
+              St. Petersburg, South Pasadena, Pinellas Park, Kenneth City, Lealman,
+              West Lealman, Gulfport, Seminole, Treasure Island, Madeira Beach, and Bay Pines.
+            </p>
+          </div>
+
+          <form class="contact-form" action="https://formsubmit.co/your-email@example.com" method="POST">
+            <h2>Request a Quote</h2>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required />
+
+            <label for="business">Business Name</label>
+            <input id="business" name="business" type="text" required />
+
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" required />
+
+            <label for="service">Type of Service Needed</label>
+            <input id="service" name="service" type="text" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit" class="btn">Send Request</button>
+            <p class="small-note">
+              Tip: Replace <code>your-email@example.com</code> in the form action with your real
+              email to receive submissions.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p><strong>Clear Vision Cleaning</strong></p>
+        <p><strong>Phone:</strong> <a href="tel:9543933479">954-393-3479</a></p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
